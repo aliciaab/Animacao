@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    flex-direction: column; /* Organiza o título e o círculo em uma coluna */
+    position: relative; /* Adiciona contexto de posicionamento */  
+    font-family: "Roboto", sans-serif;
+  }
+  
+  h1 {
+    position: absolute;
+    top: 20px; /* Ajusta a posição do título */
+    z-index: 10; /* Garante que o título fique acima do círculo */
+  }
+  
+  .circle {
+    width: 100px;
+    height: 100px;
+    background-color: #ffcc99; /* Laranja pastel */
+    border-radius: 50%;
+    position: relative;
+    animation: bounce 1s infinite;
+    transition: animation 0.3s ease;
+    z-index: 1; /* Garante que o círculo fique atrás do título */
+  }
+  
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-50px);
+    }
+  }
+  
+  .circle:hover {
+    animation: bounce 0.5s infinite; /* Acelera a animação ao passar o mouse */
+  }
+  
